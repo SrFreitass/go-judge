@@ -17,8 +17,11 @@ import java.util.Objects;
 @Setter
 public class UserDTO {
     @Size(min = 3, max = 150)
+    @NotBlank
     private String name;
+
     @Size(min = 3, max = 50)
+    @NotBlank
     private String username;
 
     @Size(min = 8, max = 50)
