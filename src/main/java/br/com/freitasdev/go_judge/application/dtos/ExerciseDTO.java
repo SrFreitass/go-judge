@@ -9,8 +9,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
-
-import java.util.UUID;
+import org.hibernate.validator.constraints.UUID;
 
 @Getter
 public class ExerciseDTO {
@@ -26,7 +25,10 @@ public class ExerciseDTO {
     @NotNull
     private Integer score;
 
-    private UUID contestId;
+
+    @NotBlank
+    @UUID
+    private String contestId;
 
 
     public Exercise toEntity() {

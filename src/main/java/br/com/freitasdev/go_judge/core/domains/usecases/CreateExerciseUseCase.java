@@ -19,8 +19,8 @@ public class CreateExerciseUseCase {
         this.exerciseRepository = exerciseRepository;
     }
 
-    public Exercise execute(Exercise exercise, UUID contestId) {
-       Optional<Contest> contest = this.contestRepository.findById(contestId);
+    public Exercise execute(Exercise exercise, String contestId) {
+       Optional<Contest> contest = this.contestRepository.findById(UUID.fromString(contestId));
 
        if(contest.isEmpty()) {
            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Contest not found");

@@ -8,3 +8,11 @@ services:
     environment:
       - POSTGRES_DB=go_judge_db
       - POSTGRES_PASSWORD=admin
+  rabbitmq:
+    image: rabbitmq:4-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - "15672:15672"
+      - "5672:5672"
